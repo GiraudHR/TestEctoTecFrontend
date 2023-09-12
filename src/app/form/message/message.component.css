@@ -1,0 +1,40 @@
+.message-content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header_message{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.body-message{
+    width: 100%;
+    margin: 0 auto;
+}
+
+.body-message p{
+    margin: 0 auto;
+    
+}
+
+.body-message ul{
+    padding-left: 30px;
+}
+
+.body-message ul li{
+    margin: 0;
+}
+
+.btn-container{
+    display: flex;
+    justify-content: center;
+}
+
+.btn-ok{
+    color:blue;
+}

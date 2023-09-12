@@ -1,0 +1,19 @@
+.header{
+    width: 90%;
+    height: 150px;
+    margin: 20px auto 0 auto;
+    border-radius: 30px;
+    background-color: #06E409;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title{
+    color: white;
+    font-family: 'David Libre', serif;
+    font-size: 80px;
+    margin: 0;
+    padding: 20px 0 0 0;
+}
+

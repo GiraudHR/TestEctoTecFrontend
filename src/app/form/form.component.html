@@ -1,0 +1,48 @@
+<form *ngIf="!sendEmail" class="formLeavesForm" [formGroup]="greenLeavesform">
+  <div class="label-form-field">
+    <label>Nombre:</label>
+    <mat-form-field appearance="fill">
+      <mat-label>Ej. Denisse Sereno Rincón</mat-label>
+      <input type="text" matInput formControlName="name">
+    </mat-form-field>
+  </div>
+  <div class="label-form-field">
+    <label>E-mail:</label>
+    <mat-form-field appearance="fill">
+      <mat-label>Ej. correo@empresa.com</mat-label>
+      <input type="email" matInput formControlName="email">
+    </mat-form-field>
+  </div>
+  <div class="label-form-field">
+    <label>Teléfono:</label>
+    <mat-form-field appearance="fill">
+      <span matPrefix>+55</span>
+      <mat-label>Teléfono</mat-label>
+      <input type="text" maxlength="15" (keypress)="validateFormat($event)" placeholder="Ej. 5541526355" matInput formControlName="phone">
+    </mat-form-field>
+  </div>
+  <div class="label-form-field">
+    <label>Fecha:</label>
+    <mat-form-field appearance="fill">
+      <mat-label>Elige una fecha</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="date" [min]="minDate">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div class="label-form-field">
+    <label>Cuidad y Estado:</label>
+    <mat-form-field appearance="fill">
+      <mat-label>Ciudad y Extado</mat-label>
+      <input type="text" matInput [matAutocomplete]="autoAddress" formControlName="address">
+      <mat-autocomplete  #autoAddress="matAutocomplete">
+        <mat-option *ngFor="let add of address" [value]="add.addressFull">
+          {{add.addressFull}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </div>
+  <div>
+    <button mat-flat-button color="primary" type="button" (click)="save()">Enviar</button>
+  </div>
+</form>
